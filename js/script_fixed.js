@@ -23,12 +23,11 @@ registerForm.addEventListener("submit", function(event) {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
 
-    
-    
-if (!name || !email || !password) {
+    if (!name || !email || !password) {
         alert("Please fill in all fields before submitting.");
         return;
     }
 
-    console.log("Registering user:", { name, email, password });
+    console.log("Registering user:", { name, email });
+    // TODO: submit the form data to the server here
 });
