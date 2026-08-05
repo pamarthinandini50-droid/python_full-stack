@@ -73,12 +73,9 @@ p {
 }
 
 .banner {
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
+    width: 80%;
+    height: 200px;
+    margin-bottom: 20px;
 }
 
 ul {
@@ -335,3 +332,4 @@ max-width:100%;
 height:auto;
 
 }
+
