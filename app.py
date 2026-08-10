@@ -26,12 +26,22 @@ def trainers():
 @app.route('/register',methods=["POST","GET"])
 def register():
     if request.method=="POST":
-        name=request.form["name"]
-        email=request.form["email"]
-        password=request.form["password"]
-        dob=request.form["dob"]
-        gender=request.form["gender"]
-        course=request.form["course"]
+        name=request.form.get("name", "")
+        email=request.form.get("email", "")
+        password=request.form.get("password", "")
+        dob=request.form.get("dob", "")
+        gender=request.form.get("gender", "")
+        course=request.form.get("course", "")
+
+        if email:
+            users_db[email] = {
+                "name": name,
+                "email": email,
+                "password": password,
+                "dob": dob,
+                "gender": gender,
+                "course": course,
+            }
         return render_template("register.html")
     return render_template("register.html")
 
@@ -48,7 +58,11 @@ def api_register():
 
     if email in users_db:
         return jsonify({"status": "error", "message": "User already exists with this email"}), 400
-    users_db[email] = data
+
+    users_db[email] = {
+        **data,
+        "dob": data.get("dob", "")
+    }
     return jsonify({"status": "success", "message": "Registration successful!"}) 
 
 @app.route('/api/login', methods=["POST"])
