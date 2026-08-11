@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-
-
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
     <title>Register page</title>
 </head>
 
@@ -14,9 +12,7 @@
     <header>Register</header>
     <main>
         <h2>Student Registration </h2>
-        <form id = "registerForm" method="POST">
-
-
+        <form id="registerForm" method="POST">
             <label>Full Name</label><br>
             <input type="text" placeholder="Enter Your Name" id="name" name="name"><br>
             <label>Email</label><br>
@@ -24,24 +20,21 @@
             <label>Password</label><br>
             <input type="password" placeholder="Enter Your Password" id="password" name="password"><br>
             <label>Date of Birth</label><br>
-            <input type="date" placeholder="DOB" id="dob" name="dob"><br>
+            <input type="date" placeholder="DOB" name="dob"><br>
             <label>Gender</label><br>
-            <input type="radio" name="gender" id="male" value="Male">
-            <label for="male">Male</label>
-            <input type="radio" name="gender" id="female" value="Female">
-            <label for="female">Female</label> <br><br>
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female <br><br>
             <label>Select Course</label>
             <br>
-            <select name="course" id="course">
+            <select name="course">
                 <option>Python FullStack</option>
                 <option>Java FullStack</option>
             </select>
             <br>
-            <input type="submit" value="Register">
+            <button type="submit" value="Register">Register</button>
         </form>
     </main>
-    <script src="js/script.js"></script>
-    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+    <script src="{{url_for('static',filename='js/script.js')}}"></script>
 </body>
 
 </html>
